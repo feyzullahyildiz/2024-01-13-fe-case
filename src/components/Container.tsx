@@ -27,6 +27,8 @@ interface Props extends SharedProps {
   wrap?: boolean;
   wrapIfMobile?: boolean;
   noWrap?: boolean;
+  paddingTopBottom?: string;
+  padding?: string;
 }
 const MainContainer = syled.div<MainContainerProps>`
   position: relative;
@@ -42,20 +44,27 @@ const MainContainer = syled.div<MainContainerProps>`
   justify-content: ${(props) => props.justify || "inherit"};
 `;
 export const Container: React.FC<Props> = ({
+  padding,
   noPadding,
   justify,
   justifyCenterIfMobile,
   wrap,
   wrapIfMobile,
   noWrap,
+  paddingTopBottom,
   ...props
 }) => {
   const isMobile = useIsMobile();
 
-  const padding = useMemo(() => {
-    const defaultPadding = isMobile ? "16px" : "30.5px 80px";
+  const paddingValue = useMemo(() => {
+    if (padding) {
+      return padding;
+    }
+    const defaultPadding = isMobile
+      ? "16px"
+      : `${paddingTopBottom || "30.5px"} 80px`;
     return noPadding ? "0" : defaultPadding;
-  }, [noPadding, isMobile]);
+  }, [padding, noPadding, paddingTopBottom, isMobile]);
 
   const justifyValue = useMemo(() => {
     const isCenterDefault = isMobile && justifyCenterIfMobile;
@@ -80,7 +89,7 @@ export const Container: React.FC<Props> = ({
     <MainContainer
       flexWrap={flexWrap}
       justify={justifyValue}
-      padding={padding}
+      padding={paddingValue}
       {...props}
     />
   );

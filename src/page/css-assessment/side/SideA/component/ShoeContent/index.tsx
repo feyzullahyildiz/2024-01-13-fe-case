@@ -4,6 +4,7 @@ import {
   Container,
   LinkButton,
   SignUpNow,
+  Title,
 } from "../../../../../../components";
 import ImageGoldShoe from "./goldNikeShoe.png";
 import PlayIconSVG from "./PlayIcon.svg";
@@ -45,12 +46,6 @@ const ButtonContainer = styled(JustifyCenter)`
   gap: 1rem;
 `;
 
-const Title = styled(JustifyCenter)`
-  font-size: 72px;
-  display: flex;
-  align-items: center;
-  font-weight: 800;
-`;
 const Description = styled.div`
   max-width: 700px;
 `;
@@ -74,9 +69,7 @@ export const ShoeContent = () => {
       // wrap
     >
       <Left isMobile={isMobile}>
-        <Title isMobile={isMobile} textCenter>
-          Collectible Sneakers
-        </Title>
+        <Title fontSize={72}>Collectible Sneakers</Title>
         <Description>
           Sit elit feugiat turpis sed integer integer accumsan turpis. Sed
           suspendisse nec lorem mauris. Pharetra, eu imperdiet ipsum ultrices

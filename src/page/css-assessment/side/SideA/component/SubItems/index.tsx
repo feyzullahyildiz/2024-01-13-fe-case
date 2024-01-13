@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Container } from "../../../../../../components";
+import { Container, Title } from "../../../../../../components";
 import { TvSVG, CupSVG, WaterMelonSVG, Icon1, Icon2, Icon3 } from "./icons";
 
 const Item = styled.nav``;
@@ -10,10 +10,6 @@ const AbsoluteImg = styled.img<{ left?: string; top?: string }>`
   position: relative;
   left: ${(props) => props.left || "inherit"};
   top: ${(props) => props.top || "inherit"};
-`;
-const Title = styled.nav`
-  font-size: 20px;
-  font-weight: 600;
 `;
 const Description = styled.nav`
   font-size: 16px;
@@ -28,7 +24,9 @@ export const SubItems = () => {
           <img src={CupSVG} />
           <AbsoluteImg src={Icon1} left="-37px" top="-28px" />
         </Icon>
-        <Title>Nibh viverra</Title>
+        <Title fontSize={20} fontWeight={600}>
+          Nibh viverra
+        </Title>
         <Description>
           Sit bibendum donec dolor fames neque vulputate non sit aliquam.
           Consequat turpis natoque leo, massa.{" "}
@@ -39,7 +37,9 @@ export const SubItems = () => {
           <img src={WaterMelonSVG} />
           <AbsoluteImg src={Icon2} left="-37px" top="-28px" />
         </Icon>
-        <Title>Cursus amet</Title>
+        <Title fontSize={20} fontWeight={600}>
+          Cursus amet
+        </Title>
         <Description>
           Sit bibendum donec dolor fames neque vulputate non sit aliquam.
           Consequat turpis natoque leo, massa.
@@ -50,7 +50,9 @@ export const SubItems = () => {
           <img src={TvSVG} />
           <AbsoluteImg src={Icon3} left="-22px" top="-18px" />
         </Icon>
-        <Title>Ipsum fermentum</Title>
+        <Title fontSize={20} fontWeight={600}>
+          Ipsum fermentum
+        </Title>
         <Description>
           Sit bibendum donec dolor fames neque vulputate non sit aliquam.
           Consequat turpis natoque leo, massa.
