@@ -10,11 +10,13 @@ export const SideA = () => {
   return (
     <Main>
       <Header />
-      <Container vertical alignCenter gap="40px">
-        <ShoeContent />
-        <SubItems />
+      <div>
+        <Container noPadding vertical alignCenter gap="40px" style={{ zIndex: 10 }}>
+          <ShoeContent />
+          <SubItems />
+        </Container>
         <YellowTriangle />
-      </Container>
+      </div>
     </Main>
   );
 };

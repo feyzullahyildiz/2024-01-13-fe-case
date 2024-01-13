@@ -5,10 +5,11 @@ interface Props {
   horizontal?: boolean;
   gap?: string;
   alignCenter?: boolean;
+  noPadding?: boolean;
 }
 export const Container = syled.div<Props>`
   position: relative;
-  padding: 30.5px 80px;
+  padding: ${(props) => (props.noPadding ? "0" : "30.5px 80px")} ;
   max-width: 1440px;
   margin: auto;
   display: flex;

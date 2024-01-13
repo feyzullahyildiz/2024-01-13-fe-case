@@ -1,29 +1,31 @@
-import React from "react";
 import styled from "@emotion/styled";
-import CupSVG from "./Cup.svg";
-import WaterMelonSVG from "./WaterMelon.svg";
-import TvSVG from "./Tv.svg";
 import { Container } from "../../../../../../components";
+import { TvSVG, CupSVG, WaterMelonSVG, Icon1, Icon2, Icon3 } from "./icons";
 
-const Item = styled.nav`
-  background: #fffbeb;
-`;
+const Item = styled.nav``;
 const Icon = styled.nav`
-  background: #fffbeb;
+  position: relative;
+`;
+const AbsoluteImg = styled.img<{ left?: string; top?: string }>`
+  position: relative;
+  left: ${(props) => props.left || "inherit"};
+  top: ${(props) => props.top || "inherit"};
 `;
 const Title = styled.nav`
-  background: #fffbeb;
+  font-size: 20px;
+  font-weight: 600;
 `;
 const Description = styled.nav`
-  background: #fffbeb;
+  font-size: 16px;
 `;
 
 export const SubItems = () => {
   return (
-    <Container>
+    <Container gap="80px">
       <Item>
         <Icon>
-          <img src={CupSVG}></img>
+          <img src={CupSVG} />
+          <AbsoluteImg src={Icon1} left="-37px" top="-28px" />
         </Icon>
         <Title>Nibh viverra</Title>
         <Description>
@@ -33,7 +35,8 @@ export const SubItems = () => {
       </Item>
       <Item>
         <Icon>
-          <img src={WaterMelonSVG}></img>
+          <img src={WaterMelonSVG} />
+          <AbsoluteImg src={Icon2} left="-37px" top="-28px" />
         </Icon>
         <Title>Cursus amet</Title>
         <Description>
@@ -43,7 +46,8 @@ export const SubItems = () => {
       </Item>
       <Item>
         <Icon>
-          <img src={TvSVG}></img>
+          <img src={TvSVG} />
+          <AbsoluteImg src={Icon3} left="-22px" top="-18px" />
         </Icon>
         <Title>Ipsum fermentum</Title>
         <Description>
