@@ -6,7 +6,7 @@ import { Cart } from "./component";
 
 const Main = styled.div`
   min-height: 816px;
-  background: #fffbeb;
+  background: ${(props) => props.theme.background.primary};
   overflow: hidden;
   * {
     color: ${(props) => props.theme.color.color};

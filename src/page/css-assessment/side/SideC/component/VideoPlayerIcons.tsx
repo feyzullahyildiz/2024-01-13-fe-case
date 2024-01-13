@@ -3,7 +3,7 @@ import { ColoredSquare } from "../../../../../components";
 const Main = styled.div`
   width: 100%;
   height: 100%;
-  background: #f9c1c1;
+  // background: #f9c1c1;
   border-radius: 30px;
   position: absolute;
   z-index: 0;

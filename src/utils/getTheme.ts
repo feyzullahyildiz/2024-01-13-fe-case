@@ -9,5 +9,8 @@ export const getTheme = (
       color: defaultFontColor,
       link: defaultLinkColor,
     },
+    background: {
+      primary: "#fffbeb",
+    },
   };
 };

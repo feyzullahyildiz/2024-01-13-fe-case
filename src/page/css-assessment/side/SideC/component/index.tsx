@@ -5,7 +5,6 @@ import { VideoPlayer } from "./VideoPlayer";
 import { VideoPlayerIcons } from "./VideoPlayerIcons";
 const Main = styled.div`
   width: 100%;
-  // background: #f9c1c1;
   background: white;
   border-radius: 30px;
   box-shadow: 0px 0px 10px 0px #00000012, 0px 20px 25px -5px #0000001a;

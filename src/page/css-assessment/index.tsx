@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { SideA, SideB, SideC } from "./side";
+import { SideA, SideB, SideC, SideD } from "./side";
 import { getTheme } from "../../utils/getTheme";
 
 const theme = getTheme();
@@ -10,7 +10,7 @@ export const CssAssesment = () => {
       <SideA />
       <SideB />
       <SideC />
-      {/* <SideA /> */}
+      <SideD />
     </ThemeProvider>
   );
 };

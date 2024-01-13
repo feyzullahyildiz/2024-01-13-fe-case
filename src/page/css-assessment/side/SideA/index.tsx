@@ -4,7 +4,7 @@ import { Container } from "../../../../components";
 import { ShoeContent, SubItems, AbsoluteYellowTriangle } from "./component";
 const Main = styled.nav`
   min-height: 100vh;
-  background: #fffbeb;
+  background: ${(props) => props.theme.background.primary};
   position: relative;
 `;
 const ContentDiv = styled.div``;
