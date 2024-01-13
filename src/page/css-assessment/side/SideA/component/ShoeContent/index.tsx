@@ -23,6 +23,7 @@ const Title = styled.div`
   font-size: 72px;
   display: flex;
   align-items: center;
+  font-weight: 800;
 `;
 
 const Right = styled.div`

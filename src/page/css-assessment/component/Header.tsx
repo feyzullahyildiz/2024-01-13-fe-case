@@ -13,7 +13,7 @@ const Nav = styled.div`
 `;
 const LogoText = styled.div`
   color: ${(props) => props.theme.color.link};
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
 `;
 export const Header = () => {
