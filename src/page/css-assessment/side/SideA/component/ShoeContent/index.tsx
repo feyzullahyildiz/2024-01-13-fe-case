@@ -7,46 +7,82 @@ import {
 } from "../../../../../../components";
 import ImageGoldShoe from "./goldNikeShoe.png";
 import PlayIconSVG from "./PlayIcon.svg";
-const Left = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+import { useIsMobile } from "../../../../../../hooks";
+
+interface TextAlingProps {
+  textCenter?: boolean;
+}
+interface StyleProps extends TextAlingProps {
+  isMobile: boolean;
+}
+
+const TextAlignCenter = styled.div<TextAlingProps>`
+  text-align: ${(props) => (props.textCenter ? "center" : "inherit")};
+`;
+const AlignCenter = styled(TextAlignCenter)<StyleProps>`
+  text-align: ${(props) => (props.textCenter ? "center" : "inherit")};
 `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+const JustifyCenter = styled(TextAlignCenter)<StyleProps>`
+  justify-content: ${(props) => (props.isMobile ? "center" : "inherit")};
 `;
-
-const Title = styled.div`
-  font-size: 72px;
-  display: flex;
-  align-items: center;
-  font-weight: 800;
-`;
-
-const Right = styled.div`
+const Right = styled(AlignCenter)`
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
 `;
+
+const Left = styled(AlignCenter)`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`;
+
+const ButtonContainer = styled(JustifyCenter)`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`;
+
+const Title = styled(JustifyCenter)`
+  font-size: 72px;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+`;
+const Description = styled.div`
+  max-width: 700px;
+`;
+
 const ShoeImageComponent = styled.img`
   z-index: 2;
+  max-width: 80vw;
+  min-width: 300px;
 `;
 
 export const ShoeContent = () => {
+  const isMobile = useIsMobile();
   return (
-    <Container horizontal alignCenter gap="80px">
-      <Left>
-        <Title>Collectible Sneakers</Title>
-        <div>
+    <Container
+      horizontal
+      alignCenter
+      justify="space-between"
+      justifyCenterIfMobile
+      noWrap
+      wrapIfMobile
+      // wrap
+    >
+      <Left isMobile={isMobile}>
+        <Title isMobile={isMobile} textCenter>
+          Collectible Sneakers
+        </Title>
+        <Description>
           Sit elit feugiat turpis sed integer integer accumsan turpis. Sed
           suspendisse nec lorem mauris. Pharetra, eu imperdiet ipsum ultrices
           amet.
-        </div>
-        <ButtonContainer>
+        </Description>
+        <ButtonContainer isMobile={isMobile}>
           <SignUpNow />
           <LinkButton gap="8px">
             <img src={PlayIconSVG} />
@@ -54,7 +90,7 @@ export const ShoeContent = () => {
           </LinkButton>
         </ButtonContainer>
       </Left>
-      <Right>
+      <Right isMobile={isMobile}>
         <ShoeImageComponent src={ImageGoldShoe} />
         <ColoredSquare
           color="#FBBF24"

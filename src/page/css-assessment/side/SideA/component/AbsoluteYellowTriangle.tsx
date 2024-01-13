@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 const Triangle = styled.div`
-  background: #FEF3C7;
+  clip-path: polygon(0 100vh, 100% 12%, 100% 100%, 0% 100%);
+  background: #fef3c7;
   position: absolute;
-  clip-path: polygon(100% 18%, 0% 100%, 100% 100%);
   left: 0;
   right: 0;
   top: 0;
@@ -12,6 +12,6 @@ const Triangle = styled.div`
   height: 100%;
 `;
 
-export const YellowTriangle = () => {
+export const AbsoluteYellowTriangle = () => {
   return <Triangle />;
 };

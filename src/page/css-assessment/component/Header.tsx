@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 import { Container, LinkButton, SignUpNow } from "../../../components";
+import { useIsMobile } from "../../../hooks";
+import HamburgerIconSVG from "./HamburgerIcon.svg";
+
 const Row = styled.div`
   width: 100%;
   display: flex;
@@ -17,18 +20,23 @@ const LogoText = styled.div`
   font-size: 32px;
 `;
 export const Header = () => {
+  const isMobile = useIsMobile();
   return (
     <Container>
       <Row>
         <LogoText>Collers</LogoText>
-        <Nav>
-          <LinkButton>Products</LinkButton>
-          <LinkButton>Solutions</LinkButton>
-          <LinkButton>Pricing</LinkButton>
-          <LinkButton>Resources</LinkButton>
-          <LinkButton>Log In</LinkButton>
-          <SignUpNow />
-        </Nav>
+        {isMobile ? (
+          <img src={HamburgerIconSVG} />
+        ) : (
+          <Nav>
+            <LinkButton>Products</LinkButton>
+            <LinkButton>Solutions</LinkButton>
+            <LinkButton>Pricing</LinkButton>
+            <LinkButton>Resources</LinkButton>
+            <LinkButton>Log In</LinkButton>
+            <SignUpNow />
+          </Nav>
+        )}
       </Row>
     </Container>
   );

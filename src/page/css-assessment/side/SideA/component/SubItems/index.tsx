@@ -17,11 +17,12 @@ const Title = styled.nav`
 `;
 const Description = styled.nav`
   font-size: 16px;
+  max-width: 400px;
 `;
 
 export const SubItems = () => {
   return (
-    <Container gap="80px">
+    <Container gap="40px" wrap justifyCenterIfMobile>
       <Item>
         <Icon>
           <img src={CupSVG} />

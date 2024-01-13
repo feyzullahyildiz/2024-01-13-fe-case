@@ -11,4 +11,5 @@ body {
 * {
   color: black;
   font-family: "Roboto";
+  box-sizing: border-box;
 }
