@@ -18,17 +18,18 @@ interface SharedProps extends DivProps {
   noPadding?: boolean;
   flexWrap?: string;
   justify?: string;
-}
-interface MainContainerProps extends SharedProps {
+  alignItems?: string;
   padding?: string;
 }
+interface MainContainerProps extends SharedProps {}
 interface Props extends SharedProps {
+  alignCenterIfMobile?: boolean;
   justifyCenterIfMobile?: boolean;
   wrap?: boolean;
   wrapIfMobile?: boolean;
   noWrap?: boolean;
   paddingTopBottom?: string;
-  padding?: string;
+  mobilePadding?: string;
 }
 const MainContainer = syled.div<MainContainerProps>`
   position: relative;
@@ -40,23 +41,30 @@ const MainContainer = syled.div<MainContainerProps>`
   flex-direction: ${(props) => (props.vertical ? "column" : "row")};
   flex-wrap: ${(props) => props.flexWrap};
   gap: ${(props) => props.gap || "0"};
-  align-items: ${(props) => (props.alignCenter ? "center" : "inherit")};
+  align-items: ${(props) => props.alignItems};
   justify-content: ${(props) => props.justify || "inherit"};
 `;
 export const Container: React.FC<Props> = ({
-  padding,
+  alignItems,
+  alignCenter,
+  alignCenterIfMobile,
   noPadding,
   justify,
   justifyCenterIfMobile,
   wrap,
   wrapIfMobile,
   noWrap,
+  padding,
+  mobilePadding,
   paddingTopBottom,
   ...props
 }) => {
   const isMobile = useIsMobile();
 
   const paddingValue = useMemo(() => {
+    if (mobilePadding && isMobile) {
+      return mobilePadding;
+    }
     if (padding) {
       return padding;
     }
@@ -64,7 +72,7 @@ export const Container: React.FC<Props> = ({
       ? "16px"
       : `${paddingTopBottom || "30.5px"} 80px`;
     return noPadding ? "0" : defaultPadding;
-  }, [padding, noPadding, paddingTopBottom, isMobile]);
+  }, [padding, noPadding, paddingTopBottom, mobilePadding, isMobile]);
 
   const justifyValue = useMemo(() => {
     const isCenterDefault = isMobile && justifyCenterIfMobile;
@@ -73,6 +81,16 @@ export const Container: React.FC<Props> = ({
     }
     return justify || "inherit";
   }, [justify, justifyCenterIfMobile, isMobile]);
+
+  const alignItemsValue = useMemo(() => {
+    if (alignCenterIfMobile && isMobile) {
+      return "center";
+    }
+    if (alignCenter) {
+      return "center";
+    }
+    return alignItems || "inherit";
+  }, [alignCenter, alignCenterIfMobile, alignItems, isMobile]);
 
   const flexWrap = useMemo(() => {
     const isWrap = (isMobile && wrapIfMobile) || wrap;
@@ -89,6 +107,7 @@ export const Container: React.FC<Props> = ({
     <MainContainer
       flexWrap={flexWrap}
       justify={justifyValue}
+      alignItems={alignItemsValue}
       padding={paddingValue}
       {...props}
     />

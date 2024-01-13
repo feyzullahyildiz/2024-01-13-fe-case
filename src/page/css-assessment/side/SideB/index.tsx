@@ -8,9 +8,8 @@ import { AbsoluteSquareContainer } from "./component/AbsoluteSquareContainer";
 const Main = styled.div`
   min-height: 770px;
   padding-top: 40px;
-  // padding-bottom: 40px;
-
   background: #0f172a;
+  position: relative;
   * {
     color: ${(props) => props.theme.color.color};
   }

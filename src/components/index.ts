@@ -4,4 +4,4 @@ export * from "./LinkButton";
 export * from "./ColoredSquare";
 export * from "./SignUpNow";
 export * from "./Title";
-export * from "./Cart";
+export * from "./ImageCart";

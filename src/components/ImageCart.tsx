@@ -28,7 +28,7 @@ const Description = styled.div`
 interface Props {
   imgSrc: string;
 }
-export const Cart: React.FC<Props> = ({ imgSrc }) => {
+export const ImageCart: React.FC<Props> = ({ imgSrc }) => {
   return (
     <Main>
       <Head>

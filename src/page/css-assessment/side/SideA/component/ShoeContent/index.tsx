@@ -46,8 +46,9 @@ const ButtonContainer = styled(JustifyCenter)`
   gap: 1rem;
 `;
 
-const Description = styled.div`
+const Description = styled.div<{ textCenter: boolean }>`
   max-width: 700px;
+  text-align: ${(props) => (props.textCenter ? "center" : "inherit")};
 `;
 
 const ShoeImageComponent = styled.img`
@@ -66,11 +67,12 @@ export const ShoeContent = () => {
       justifyCenterIfMobile
       noWrap
       wrapIfMobile
-      // wrap
     >
       <Left isMobile={isMobile}>
-        <Title fontSize={72}>Collectible Sneakers</Title>
-        <Description>
+        <Title fontSize={72} textCenter={isMobile}>
+          Collectible Sneakers
+        </Title>
+        <Description textCenter={isMobile}>
           Sit elit feugiat turpis sed integer integer accumsan turpis. Sed
           suspendisse nec lorem mauris. Pharetra, eu imperdiet ipsum ultrices
           amet.
