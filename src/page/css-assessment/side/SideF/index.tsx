@@ -1,11 +1,9 @@
-import { Container } from "../../../../components";
 import styled from "@emotion/styled";
 import { getTheme } from "../../../../utils/getTheme";
 import { ThemeProvider } from "@emotion/react";
 import { World } from "./component";
 
 const Main = styled.div`
-  min-height: 100vh;
   background: ${(props) => props.theme.background.primary};
   position: relative;
   * {
@@ -20,7 +18,6 @@ export const SideF = () => {
     <ThemeProvider theme={theme}>
       <Main>
         <World />
-        <Container></Container>
       </Main>
     </ThemeProvider>
   );

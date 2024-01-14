@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { SideA, SideB, SideC, SideD, SideE, SideF } from "./side";
+import { SideA, SideB, SideC, SideD, SideE, SideF, SideG } from "./side";
 import { getTheme } from "../../utils/getTheme";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -15,7 +15,7 @@ export const CssAssesment = () => {
       <SideD />
       <SideE />
       <SideF />
-      {/* <SideD /> */}
+      <SideG />
     </ThemeProvider>
   );
 };

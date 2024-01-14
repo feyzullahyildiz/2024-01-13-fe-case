@@ -4,12 +4,12 @@ interface Props {
   padding?: string;
   gap?: string;
 }
-export const LinkButton = styled.nav<Props>`
+export const LinkButton = styled.div<Props>`
   font-size: 16px;
   display: flex;
   gap: ${(props) => props.gap || "0"};
   align-items: center;
-  color: ${(props) => props.theme.color.link};
+  color: ${(props) => props.theme.color.link} !important;
   font-weight: 600;
   cursor: pointer;
   padding: ${(props) => props.padding || "4px 8px"};

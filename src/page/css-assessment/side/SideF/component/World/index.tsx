@@ -4,17 +4,13 @@ import { MacWindow, Title } from "../../../../../../components";
 import { ShoesPNG } from "./image";
 import { useIsMobile } from "../../../../../../hooks";
 const Main = styled.div`
-  min-height: 100vh;
   background: ${(props) => props.theme.background.primary};
-  padding: 80px 0;
-  position: absolute;
-  left: 0;
-  right: 0;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: visible;
+  padding-bottom: 60px;
 `;
 const DescriptionWithTick = styled.div`
   margin: 0 16px;
@@ -60,9 +56,7 @@ export const World = () => {
   const isMobile = useIsMobile();
   return (
     <Main>
-      <WorldSvgComponent
-        style={{ marginLeft: isMobile ? "80px" : 0, paddingTop: "80px" }}
-      >
+      <WorldSvgComponent style={{ marginLeft: isMobile ? "80px" : 0 }}>
         <Tooltip>
           <MacWindow
             hideToolbar
