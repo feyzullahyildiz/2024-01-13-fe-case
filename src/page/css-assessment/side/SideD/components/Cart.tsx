@@ -53,12 +53,16 @@ interface Props {
   brandSrc: string;
   brand: string;
   description: string;
+  userName: string;
+  userTitle: string;
 }
 export const Cart: FC<Props> = ({
   brand,
   description,
   brandSrc,
   avatarSrc,
+  userName,
+  userTitle,
 }) => {
   return (
     <Main>
@@ -70,8 +74,8 @@ export const Cart: FC<Props> = ({
       <Footer>
         <Avatar src={avatarSrc} />
         <User>
-          <UserText>Hellen Jummy</UserText>
-          <UserTitle>Team Lead</UserTitle>
+          <UserText>{userName}</UserText>
+          <UserTitle>{userTitle}</UserTitle>
         </User>
       </Footer>
     </Main>

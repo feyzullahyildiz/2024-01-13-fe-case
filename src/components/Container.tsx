@@ -10,8 +10,6 @@ type DivProps = React.DetailedHTMLProps<
 interface SharedProps extends DivProps {
   children?: React.ReactNode;
 
-  vertical?: boolean;
-  horizontal?: boolean;
   gap?: string;
   alignCenter?: boolean;
 
@@ -21,7 +19,9 @@ interface SharedProps extends DivProps {
   alignItems?: string;
   padding?: string;
 }
-interface MainContainerProps extends SharedProps {}
+interface MainContainerProps extends SharedProps {
+  flexDirection: string;
+}
 interface Props extends SharedProps {
   alignCenterIfMobile?: boolean;
   justifyCenterIfMobile?: boolean;
@@ -30,6 +30,9 @@ interface Props extends SharedProps {
   noWrap?: boolean;
   paddingTopBottom?: string;
   mobilePadding?: string;
+  verticalIfMobile?: boolean;
+  vertical?: boolean;
+  horizontal?: boolean;
 }
 const MainContainer = syled.div<MainContainerProps>`
   position: relative;
@@ -38,7 +41,7 @@ const MainContainer = syled.div<MainContainerProps>`
   max-width: 1440px;
   margin: auto;
   display: flex;
-  flex-direction: ${(props) => (props.vertical ? "column" : "row")};
+  flex-direction: ${(props) => props.flexDirection};
   flex-wrap: ${(props) => props.flexWrap};
   gap: ${(props) => props.gap || "0"};
   align-items: ${(props) => props.alignItems};
@@ -57,6 +60,9 @@ export const Container: React.FC<Props> = ({
   padding,
   mobilePadding,
   paddingTopBottom,
+  verticalIfMobile,
+  vertical,
+  horizontal,
   ...props
 }) => {
   const isMobile = useIsMobile();
@@ -103,8 +109,22 @@ export const Container: React.FC<Props> = ({
     return "inherit";
   }, [wrap, noWrap, wrapIfMobile, isMobile]);
 
+  const flexDirection = useMemo(() => {
+    if (verticalIfMobile && isMobile) {
+      return "column";
+    }
+    if (vertical) {
+      return "column";
+    }
+
+    if (horizontal) {
+      return "row";
+    }
+    return "row";
+  }, [isMobile, verticalIfMobile, vertical, horizontal]);
   return (
     <MainContainer
+      flexDirection={flexDirection}
       flexWrap={flexWrap}
       justify={justifyValue}
       alignItems={alignItemsValue}

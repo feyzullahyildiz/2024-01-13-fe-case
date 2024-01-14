@@ -1,6 +1,12 @@
+import emotionStyled from "@emotion/styled";
 import { ImageCart, Container } from "../../../../../components";
-import { Img1, Img2, Img3 } from "./image";
+import { Img1, Img2, Img3, ShopCartSVG } from "./image";
 
+const ButtonContent = emotionStyled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+`;
 export const CartContainer = () => {
   return (
     <Container
@@ -11,9 +17,39 @@ export const CartContainer = () => {
       wrapIfMobile
       justifyCenterIfMobile
     >
-      <ImageCart imgSrc={Img1} />
-      <ImageCart imgSrc={Img2} />
-      <ImageCart imgSrc={Img3} />
+      <ImageCart
+        title="Title"
+        desc="Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse."
+        imgSrc={Img1}
+        buttonContent={
+          <ButtonContent>
+            <img src={ShopCartSVG} />
+            Buy Now
+          </ButtonContent>
+        }
+      />
+      <ImageCart
+        title="Title"
+        desc="Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse."
+        imgSrc={Img2}
+        buttonContent={
+          <ButtonContent>
+            <img src={ShopCartSVG} />
+            Buy Now
+          </ButtonContent>
+        }
+      />
+      <ImageCart
+        title="Title"
+        desc="Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse."
+        imgSrc={Img3}
+        buttonContent={
+          <ButtonContent>
+            <img src={ShopCartSVG} />
+            Buy Now
+          </ButtonContent>
+        }
+      />
     </Container>
   );
 };

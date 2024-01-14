@@ -5,3 +5,4 @@ export * from "./ColoredSquare";
 export * from "./SignUpNow";
 export * from "./Title";
 export * from "./ImageCart";
+export * from "./MacWindow";

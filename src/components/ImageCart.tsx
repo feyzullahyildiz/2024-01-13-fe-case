@@ -10,12 +10,12 @@ const Main = styled.div`
   border-radius: 4px;
   background: #0f172a;
   overflow: hidden;
-  `;
-  const Head = styled.div`
+`;
+const Head = styled.div`
   min-height: 50px;
   overflow: hidden;
-  `;
-  const Footer = styled.div`
+`;
+const Footer = styled.div`
   min-height: 50px;
   padding: 32px;
   display: flex;
@@ -27,20 +27,26 @@ const Description = styled.div`
 `;
 interface Props {
   imgSrc: string;
+  title: string;
+  desc: string;
+  buttonContent: React.ReactNode;
 }
-export const ImageCart: React.FC<Props> = ({ imgSrc }) => {
+export const ImageCart: React.FC<Props> = ({
+  imgSrc,
+  title,
+  desc,
+  buttonContent,
+}) => {
   return (
     <Main>
       <Head>
         <img src={imgSrc} />
       </Head>
       <Footer>
-        <Title fontSize={24}>Title</Title>
+        <Title fontSize={24}>{title}</Title>
 
-        <Description>
-          Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.
-        </Description>
-        <Button>Buy Now</Button>
+        <Description>{desc}</Description>
+        <Button>{buttonContent}</Button>
       </Footer>
     </Main>
   );

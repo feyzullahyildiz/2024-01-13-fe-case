@@ -3,11 +3,9 @@ import { Container, Title } from "../../../../components";
 import { LeftArrowSVG, RigthArrow, Slide } from "./components";
 import { useIsMobile } from "../../../../hooks";
 const Main = styled.div`
-  min-height: 100vh;
   background: ${(props) => props.theme.background.primary};
-  * {
-    color: ${(props) => props.theme.color.color};
-  }
+  position: relative;
+  padding-bottom: 80px;
 `;
 const HeadButtonContainer = styled.div`
   display: flex;
@@ -22,13 +20,22 @@ const YellowArea = styled.div`
   background: #fde68a;
   margin: 0 40px;
   display: flex;
+  position: absolute;
+  top: -24px;
+  right: 0;
+  left: 0;
 `;
 export const SideD = () => {
   const isMobile = useIsMobile();
   return (
     <Main>
-      <Container justify="space-between" alignCenter>
-        <Title fontWeight={800} fontSize={56}>
+      <Container justify="space-between" alignCenter justifyCenterIfMobile>
+        <Title
+          fontWeight={800}
+          fontSize={isMobile ? 32 : 56}
+          textCenter={isMobile}
+          style={{paddingBottom: 32}}
+        >
           Because they love us
         </Title>
         {!isMobile && (
@@ -38,8 +45,10 @@ export const SideD = () => {
           </HeadButtonContainer>
         )}
       </Container>
-      <YellowArea></YellowArea>
-      <Slide style={{ top: "-360px" }} />
+      <Container padding="24px 0 0 0">
+        <YellowArea></YellowArea>
+        <Slide />
+      </Container>
     </Main>
   );
 };
