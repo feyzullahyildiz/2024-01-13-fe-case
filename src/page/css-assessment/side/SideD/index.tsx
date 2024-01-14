@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { Container, Title } from "../../../../components";
-import { LeftArrowSVG, RigthArrow } from "./components/icon";
+import { LeftArrowSVG, RigthArrow, Slide } from "./components";
 import { useIsMobile } from "../../../../hooks";
-
 const Main = styled.div`
   min-height: 100vh;
   background: ${(props) => props.theme.background.primary};
@@ -19,7 +18,7 @@ const ImgIcon = styled.img`
 `;
 const YellowArea = styled.div`
   box-sizing: border-box;
-  min-height: 100px;
+  min-height: 420px;
   background: #fde68a;
   margin: 0 40px;
   display: flex;
@@ -40,6 +39,7 @@ export const SideD = () => {
         )}
       </Container>
       <YellowArea></YellowArea>
+      <Slide style={{ top: "-360px" }} />
     </Main>
   );
 };
