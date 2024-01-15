@@ -6,3 +6,4 @@ export * from "./SignUpNow";
 export * from "./Title";
 export * from "./ImageCart";
 export * from "./MacWindow";
+export * from "./Progress";

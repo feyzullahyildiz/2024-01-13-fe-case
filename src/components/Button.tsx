@@ -12,4 +12,17 @@ export const Button = styled.button`
 
   border: 2px solid ${(props) => props.theme.color.color};
   border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active, &:focus {
+    opacity: 0.7;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    user-select: none;
+  }
 `;
