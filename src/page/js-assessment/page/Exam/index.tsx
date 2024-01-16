@@ -45,7 +45,7 @@ export const Exam = () => {
     );
   }
   return (
-    <Container noPadding style={{ margin: 0 }} vertical>
+    <Container noPadding style={{ margin: 0, maxWidth: "unset" }} vertical>
       <Progress
         value={activeQuestion?.number}
         max={questionCount}
@@ -55,7 +55,7 @@ export const Exam = () => {
       <Container
         vertical
         alignItems="flex-start"
-        style={{ margin: 0, flex: 1 }}
+        style={{ margin: 0, flex: 1, maxWidth: "unset" }}
       >
         <Status>
           <span>Exam Status</span>

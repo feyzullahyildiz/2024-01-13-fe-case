@@ -18,7 +18,7 @@ const theme = getTheme("#c1c1c1", "#c1c1c1", {
 export const JsAssessment = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Main className="MAIN">
+      <Main>
         <Outlet />
       </Main>
     </ThemeProvider>
