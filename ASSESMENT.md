@@ -1,4 +1,4 @@
-CSS Çalışması
+# CSS Çalışması
 Figma dosyası bulunan arayüz tasarımının responsive olarak Tailwind veya Bootstrap kullanarak kodlanması gerekmektedir.
 
 Gerekli yerlerde dinamik tasarım özelliklerinin çalışır olması, (Örneğin ; ileri-geri butonları ile elementlerin kaydırılması vb.) beklenmektedir.
@@ -8,7 +8,7 @@ Gerekli yerlerde dinamik tasarım özelliklerinin çalışır olması, (Örneği
 
  
 
-Javascript Çalışması (Quiz App)
+# Javascript Çalışması (Quiz App)
 10 sorudan oluşan bir quiz test app çalışması yapılması gerekmektedir.
 
 Soru metinleri aşağıdaki linkten çekilecektir.

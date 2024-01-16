@@ -1,9 +1,11 @@
 [Assesment Açıklaması](./ASSESMENT.md)
 
 # Proje Nasıl Başlatılır
+
 - npm install
 - npm run dev
 - Tarayıcıdan bu URL'i açınız: http://localhost:5173
+
 # Demo App
 
 [Netlify Demo App](https://feyzullah-yildiz-2024-01-13-fe-case.netlify.app/)
@@ -29,4 +31,7 @@
 - Bu path'e gidince görebilirsiniz `/js-assesment`
 - Genel olarak Sınav'ı yöneten custom bir hook [(useExam.tsx)](src/page/js-assessment/page/Exam/hooks/useExam.tsx) yazdım ve Stateleri bu yönetiyor.
 - sınav bittikten sonra, yani sınva sonuç sayfasında geri'ye basınca sınava tekrardan dönmüyor. Sınav başlangıç sayfasına yönleniyor.
--
+
+# Eleştirim
+
+- Figma'yı benim ile beraber 2 kişi daha kullanıyordu. Resimleri, SVG'leri export edebilmek için login olmak zorundaydım bu sebepten dolayı ismim gözüküyordu. Projeyi githubda public repoda yapmam gerektiği için kullandığım yöntemlerin çalınmasından endişelendim. Şuana kadar repo private idi, bu saatten (2024-01-16 03:33) sonra public yapıyorum.
