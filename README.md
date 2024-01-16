@@ -1,6 +1,14 @@
 [Assesment Açıklaması](./ASSESMENT.md)
 
-# Case
+# Proje Nasıl Başlatılır
+- npm install
+- npm run dev
+- Tarayıcıdan bu URL'i açınız: http://localhost:5173
+# Demo App
+
+[Netlify Demo App](https://feyzullah-yildiz-2024-01-13-fe-case.netlify.app/)
+
+# Notlarım
 
 - CSS ve JS için verilen ödev bu uygulamadadır.
 - Herhangi bir UI kütüphanesi kullanmadım, açıkcası kütüphane kullanamdan yapmanın daha zahmetli-önemli olduğunu düşündüm. Daha önceden `MaterialUI`, `ChakraUI`, `Ant Design`, `Mantine UI`, `Prime React` kütüphanelerini kullandım.
@@ -22,7 +30,3 @@
 - Genel olarak Sınav'ı yöneten custom bir hook [(useExam.tsx)](src/page/js-assessment/page/Exam/hooks/useExam.tsx) yazdım ve Stateleri bu yönetiyor.
 - sınav bittikten sonra, yani sınva sonuç sayfasında geri'ye basınca sınava tekrardan dönmüyor. Sınav başlangıç sayfasına yönleniyor.
 -
-
-# Demo App
-
-[Netlify Demo App](https://feyzullah-yildiz-2024-01-13-fe-case.netlify.app/)
